@@ -1,0 +1,12 @@
+#!/bin/bash
+# need netspeed-go
+# https://github.com/anoop142/netspeed-go
+
+device="enp3s0"
+icon="🔻"
+icon1="🔺"
+TX_RX=$(netspeed-go -i "$device" -up -down)
+TX=$(echo "$TX_RX" | cut -d ":" -f1 )
+RX=$(echo "$TX_RX" | cut -d ":" -f2)
+
+printf " %s %s %s %s \\n" "$icon" "$RX" "$icon1" "$TX"

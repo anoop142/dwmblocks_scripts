@@ -1,0 +1,12 @@
+#!/bin/sh
+pid_file="/tmp/screen_record_pid"
+pause_file="/tmp/screen_record_paused"
+if [ -f "$pause_file" ]
+then
+	echo "recording paused ⏸️ ⏺️🎙️"
+elif [  -f "$pid_file" ]
+then
+	echo "recording ⏺️🎙️"
+else
+	echo ""
+fi
